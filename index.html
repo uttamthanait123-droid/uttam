@@ -1,728 +1,597 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.65">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    span.s1 {font: 12.0px 'Apple Color Emoji'}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Uttam Thanait | Aluminium & uPVC Fabricator</title>
+    <meta name="description" content="Uttam Thanait - Professional Aluminium and uPVC fabricator specializing in doors, windows, partitions, modular kitchens, glazing and tables for homes and offices.">
+    <meta name="author" content="Uttam Thanait">
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #1e1e2a;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e9e9ef;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b87c4f;
+            border-radius: 6px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            border-bottom: 1px solid #eaeef2;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+        .logo h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            background: linear-gradient(135deg, #2c3e50, #b87c4f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: block;
+            color: #5a5e73;
+            letter-spacing: 0.2px;
+        }
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #2d3e50;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #b87c4f;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #2d3e50;
+        }
+
+        .hero {
+            padding: 70px 0 60px;
+            background: linear-gradient(120deg, #f9f7f3 0%, #ffffff 100%);
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: #e7ddcf;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9b5e2c;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1f2a36;
+        }
+        .hero-highlight {
+            color: #b87c4f;
+            border-bottom: 3px solid #f0cfaa;
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #4a5562;
+            max-width: 550px;
+            margin-bottom: 28px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .btn-primary, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: #b87c4f;
+            color: white;
+            border: none;
+            box-shadow: 0 6px 14px rgba(184,124,79,0.25);
+        }
+        .btn-primary:hover {
+            background: #9b623b;
+            transform: translateY(-3px);
+        }
+        .btn-outline {
+            border: 1.5px solid #b87c4f;
+            color: #b87c4f;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #b87c4f10;
+            transform: translateY(-3px);
+        }
+        .hero-image {
+            flex: 0.9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .profile-photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            background: #e3d9ce;
+        }
+        .hero-image .caption {
+            font-weight: 500;
+            color: #7c6b58;
+            background: rgba(255,255,240,0.7);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e2a36;
+        }
+        .section-sub {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 48px auto;
+            color: #5c677d;
+            font-size: 1.1rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 28px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eceef2;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #e5d5c4;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #b87c4f;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .gallery {
+            background: #fbf9f6;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+            border: 1px solid #f0e6de;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #dad2c6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .gallery-info {
+            padding: 20px;
+        }
+        .gallery-info h4 {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-section {
+            background: linear-gradient(115deg, #ffffff 0%, #f7f4ef 100%);
+            border-radius: 48px;
+            margin: 20px auto 60px;
+            padding: 50px 40px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .contact-detail {
+            margin: 28px 0;
+        }
+        .contact-detail div {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 1.1rem;
+        }
+        .contact-detail i {
+            font-size: 1.7rem;
+            color: #b87c4f;
+            width: 40px;
+        }
+        .contact-detail a {
+            text-decoration: none;
+            color: #2d3e50;
+            font-weight: 500;
+        }
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 32px;
+            border-radius: 32px;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e2e6ea;
+            border-radius: 60px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .form-group textarea {
+            border-radius: 28px;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #b87c4f;
+            box-shadow: 0 0 0 3px rgba(184,124,79,0.2);
+        }
+        .submit-btn {
+            background: #b87c4f;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #9b623b;
+        }
+
+        footer {
+            background: #11161c;
+            color: #b9c2ce;
+            padding: 40px 0 30px;
+            text-align: center;
+            border-top-left-radius: 36px;
+            border-top-right-radius: 36px;
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: white;
+                padding: 20px 0;
+                gap: 16px;
+            }
+            .nav-links a {
+                margin: 0;
+                display: block;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-grid {
+                flex-direction: column-reverse;
+            }
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Uttam Thanait | Aluminium &amp; uPVC Fabricator | Premium Craftsmanship&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts &amp; Font Awesome --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- AOS Library for subtle scroll animations --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fefefe;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1e1e2a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #e9e9ef;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1280px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 24px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Navigation */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.navbar {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.96);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(10px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 15px rgba(0,0,0,0.03);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eaeef2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-wrapper {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.logo h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.4px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #2c3e50, #b87c4f);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.logo span {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #5a5e73;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.2px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-links a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-left: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2d3e50;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-links a:hover, .nav-links a.active {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.mobile-menu {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2d3e50;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Hero Section with Person Photo */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 70px 0 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(120deg, #f9f7f3 0%, #ffffff 100%);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1.2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #e7ddcf;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #9b5e2c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1f2a36;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-highlight {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 3px solid #f0cfaa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.15rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5562;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 550px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary, .btn-outline {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.25s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 6px 14px rgba(184,124,79,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #9b623b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-outline {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1.5px solid #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-outline:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #b87c4f10;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-image {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 0.9;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-photo {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 5px solid white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #e3d9ce;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-image .caption {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #7c6b58;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,240,0.7);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-image img:not(.profile-photo) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 24px rgba(0,0,0,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Services section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 80px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1e2a36;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-sub {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 650px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 48px auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #5c677d;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.services-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 20px rgba(0,0,0,0.02);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #eceef2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-8px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #e5d5c4;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-icon {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #5e697b;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Gallery / Projects with real images */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fbf9f6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 20px rgba(0,0,0,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #f0e6de;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-item:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.02);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 16px 28px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #dad2c6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-img img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.4s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-item:hover .gallery-img img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-info {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-info h4 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gallery-info p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #7a6a5a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Contact &amp; Quote Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(115deg, #ffffff 0%, #f7f4ef 100%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 28px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-flex {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-info {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-info h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-detail {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 28px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-detail div {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-detail i {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-detail a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2d3e50;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-form {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 26px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group input, .form-group textarea {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e2e6ea;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group textarea {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>resize: vertical;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group input:focus, .form-group textarea:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 3px rgba(184,124,79,0.2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.submit-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #b87c4f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.submit-btn:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #9b623b;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-message {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #11161c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b9c2ce;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 0 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top-left-radius: 36px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top-right-radius: 36px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-content p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 6px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 850px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.nav-links {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.nav-links a {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.mobile-menu {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.nav-links.active {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-content h1 {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-grid {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column-reverse;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.contact-section {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 32px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-photo {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>width: 180px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>height: 180px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.brand-stamp {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #7f8c8d;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="navbar"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container nav-wrapper"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Uttam Thanait&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Aluminium &amp; uPVC Mastercraft&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mobile-menu" id="mobileMenuBtn"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-bars"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="nav-links" id="navLinks"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#home" class="active nav-link"&gt;Home&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#services" class="nav-link"&gt;Services&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#gallery" class="nav-link"&gt;Portfolio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#contact" class="nav-link"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Hero Section with Personal Photo &amp; Fabrication preview --&gt;</p>
-<p class="p1">&lt;section id="home" class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container hero-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-content" data-aos="fade-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-badge"&gt;&lt;i class="fas fa-hard-hat"&gt;&lt;/i&gt; 14+ years craftmanship&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Precision &lt;span class="hero-highlight"&gt;Aluminium &amp; uPVC&lt;/span&gt; Fabrication for Homes &amp; Offices&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Doors • Windows • Partitions • Modular Kitchens • Glazing • Tables — engineered for strength, elegance, and longevity.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cta-buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#contact" class="btn-primary"&gt;&lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt; Request Quote&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#gallery" class="btn-outline"&gt;&lt;i class="fas fa-images"&gt;&lt;/i&gt; View Projects&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-image" data-aos="fade-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Professional Person Photo (using placeholder with name as fallback but realistic style) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Uttam Thanait - Professional Aluminium Fabricator" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?background=b87c4f&amp;color=fff&amp;rounded=true&amp;size=240&amp;name=Uttam+T';"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="caption"&gt;&lt;i class="fas fa-user-check"&gt;&lt;/i&gt; Uttam Thanait | Aluminium Specialist&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://placehold.co/600x240/f2ede5/b87c4f?text=Custom+Aluminium+Work+Showcase&amp;font=montserrat" alt="Aluminium sliding window showcase" style="width:100%; max-width:280px; margin-top:14px; border-radius: 60px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Services Section --&gt;</p>
-<p class="p1">&lt;section id="services" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title" data-aos="fade-up"&gt;What I Deliver&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub" data-aos="fade-up" data-aos-delay="100"&gt;Premium aluminium &amp; uPVC solutions tailored to modern architecture — robust, elegant, sustainable.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="services-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card" data-aos="zoom-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-icon"&gt;&lt;i class="fas fa-door-open"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Doors &amp; Windows&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Sliding, casement, french doors — thermally broken profiles, smooth hardware &amp; custom finishes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card" data-aos="zoom-in" data-aos-delay="50"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-icon"&gt;&lt;i class="fas fa-border-all"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Office Partitions&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Glass &amp; aluminium modular partitions for modern workspaces, soundproof &amp; stylish designs.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card" data-aos="zoom-in" data-aos-delay="100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-icon"&gt;&lt;i class="fas fa-utensils"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Modular Kitchen&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;High-gloss, powder-coated aluminium frames with soft-close drawers &amp; durable finish.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card" data-aos="zoom-in" data-aos-delay="150"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-icon"&gt;&lt;i class="fas fa-chalkboard"&gt;&lt;/i&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Glazing &amp; Tables&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Toughened glass partitions, skylights, and custom aluminium tables for office/home.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Gallery / Portfolio Section with Diverse Project Images --&gt;</p>
-<p class="p1">&lt;section id="gallery" class="section gallery"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title" data-aos="fade-up"&gt;Our Signature Fabrications&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub" data-aos="fade-up"&gt;Real projects — blending modern design with industrial strength.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="gallery-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Modern aluminium sliding windows" onerror="this.src='https://placehold.co/600x400/e7ddcf/b87c4f?text=Aluminium+Windows'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Sliding Aluminium Windows&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Powder coated, multi-chamber uPVC + aluminum hybrid. Installed at Vasant Vihar residence.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left" data-aos-delay="100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/5428900/pexels-photo-5428900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Office glass partition aluminium frame" onerror="this.src='https://placehold.co/600x400/cfb99c/9b623b?text=Glass+Partition'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Office Glass Partitions&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Frameless glazing &amp; aluminum framing for corporate elegance &amp; daylight harvesting.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left" data-aos-delay="200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/6457515/pexels-photo-6457515.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Modular aluminium kitchen" onerror="this.src='https://placehold.co/600x400/bfaa8a/5e3a22?text=Modular+Kitchen'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Modular Kitchen Setup&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Complete aluminum modular kitchen with soft-close and scratch-resistant premium finish.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left" data-aos-delay="300"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Custom aluminium table modern" onerror="this.src='https://placehold.co/600x400/cbb291/8b5a2e?text=Aluminium+Table'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Custom Aluminium Table&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Brushed aluminium tabletop + solid wood inserts — minimalist design for office lounges.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left" data-aos-delay="400"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/4105671/pexels-photo-4105671.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="uPVC door installation" onerror="this.src='https://placehold.co/600x400/dbc09e/a77b3e?text=uPVC+Doors'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Elegant uPVC Doors&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Weather-resistant, energy efficient uPVC doors with multi-point locking systems.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="gallery-item" data-aos="flip-left" data-aos-delay="500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Aluminium facade glazing" onerror="this.src='https://placehold.co/600x400/cdb38c/906b40?text=Glazing+Project'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="gallery-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Structural Glazing&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;High-performance glazing for modern storefronts and residential facades.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Contact + Quote Form --&gt;</p>
-<p class="p1">&lt;section id="contact" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-section" data-aos="fade-up"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="contact-flex"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="contact-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;Let’s craft something &lt;br&gt;remarkable together&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;From consultation to final installation — get durable, precision-engineered aluminium &amp; uPVC solutions tailored to your space.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="contact-detail"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;i class="fas fa-phone-alt"&gt;&lt;/i&gt; &lt;a href="tel:9864572124"&gt;9864572124&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; &lt;a href="mailto:uttamthanait123@gmail.com"&gt;uttamthanait123@gmail.com&lt;/a&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt; &lt;span&gt;Serving across regions | On-site fabrication &amp; measurement&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div style="margin-top: 10px; background:#e8dfd3; display:inline-block; padding:6px 18px; border-radius:50px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">⭐</span> Free estimation &amp; technical consultation</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="contact-form"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 style="font-size: 1.7rem; margin-bottom: 18px;"&gt;Request a Quote&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form id="quoteForm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="name" placeholder="Full Name" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="tel" id="phone" placeholder="Phone Number" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="email" id="email" placeholder="Email Address" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;textarea rows="3" id="message" placeholder="Tell me about your project (doors, windows, partition, kitchen, etc.)"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="submit-btn"&gt;&lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt; Send Inquiry&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="formFeedback" class="form-message"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Footer --&gt;</p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container footer-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Uttam Thanait&lt;/strong&gt; — Aluminium &amp; uPVC Specialist | Precision Fabrication&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;i class="fas fa-phone-alt"&gt;&lt;/i&gt; 9864572124 &amp;nbsp;|&amp;nbsp; &lt;i class="fas fa-envelope"&gt;&lt;/i&gt; uttamthanait123@gmail.com&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size: 0.85rem; margin-top: 16px;"&gt;© 2025 — Premium quality for modern living. On-time delivery guaranteed.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script src="https://unpkg.com/aos@2.3.1/dist/aos.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>AOS.init({ duration: 800, once: true, offset: 80 });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Mobile menu toggle</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const mobileBtn = document.getElementById('mobileMenuBtn');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const navLinks = document.getElementById('navLinks');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>mobileBtn.addEventListener('click', () =&gt; navLinks.classList.toggle('active'));</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Active nav highlight + smooth scroll</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const sections = document.querySelectorAll('section');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const navItems = document.querySelectorAll('.nav-link');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function updateActiveNav() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let current = '';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const scrollPos = window.scrollY + 120;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>sections.forEach(section =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const sectionTop = section.offsetTop;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const sectionHeight = section.clientHeight;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (scrollPos &gt;= sectionTop &amp;&amp; scrollPos &lt; sectionTop + sectionHeight) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>current = section.getAttribute('id');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>navItems.forEach(item =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>item.classList.remove('active');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (item.getAttribute('href') === `#${current}`) item.classList.add('active');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener('scroll', updateActiveNav);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener('load', updateActiveNav);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('.nav-link, .btn-primary, .btn-outline').forEach(anchor =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>anchor.addEventListener('click', function(e) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const href = this.getAttribute('href');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (href &amp;&amp; href.startsWith('#')) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const targetId = href.substring(1);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const targetEl = document.getElementById(targetId);</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (targetEl) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>if (navLinks.classList.contains('active')) navLinks.classList.remove('active');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Form handling</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const quoteForm = document.getElementById('quoteForm');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const feedbackDiv = document.getElementById('formFeedback');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>quoteForm.addEventListener('submit', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const name = document.getElementById('name').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const phone = document.getElementById('phone').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const email = document.getElementById('email').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const message = document.getElementById('message').value.trim();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (!name || !phone || !email) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>feedbackDiv.innerHTML = '&lt;span style="color:#c7362b;"&gt;&lt;i class="fas fa-exclamation-circle"&gt;&lt;/i&gt; Please fill name, phone &amp; email.&lt;/span&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (!email.includes('@') || !email.includes('.')) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>feedbackDiv.innerHTML = '&lt;span style="color:#c7362b;"&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; Enter a valid email address.&lt;/span&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>feedbackDiv.innerHTML = '&lt;span style="color:#2c7a4b;"&gt;&lt;i class="fas fa-spinner fa-pulse"&gt;&lt;/i&gt; Sending your request...&lt;/span&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>feedbackDiv.innerHTML = '&lt;span style="color:#2c7a4b;"&gt;&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt; Thanks! Uttam will contact you within 24 hours.&lt;/span&gt;';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>quoteForm.reset();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; { feedbackDiv.innerHTML = ''; }, 4000);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}, 1000);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>console.log(`Quote from ${name}, ${phone}, ${email}, message: ${message}`);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <h2>Uttam Thanait</h2>
+            <span>Aluminium & uPVC Mastercraft</span>
+        </div>
+        <div class="mobile-menu" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#gallery" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+</div>
+
+<section id="home" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content" data-aos="fade-right">
+            <div class="hero-badge"><i class="fas fa-hard-hat"></i> 14+ years craftmanship</div>
+            <h1>Precision <span class="hero-highlight">Aluminium & uPVC</span> Fabrication for Homes & Offices</h1>
+            <p>Doors • Windows • Partitions • Modular Kitchens • Glazing • Tables — engineered for strength, elegance, and longevity.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Request Quote</a>
+                <a href="#gallery" class="btn-outline"><i class="fas fa-images"></i> View Projects</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Uttam Thanait" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?background=b87c4f&color=fff&rounded=true&size=240&name=Uttam+T';">
+            <div class="caption"><i class="fas fa-user-check"></i> Uttam Thanait | Aluminium Specialist</div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What I Deliver</h2>
+        <p class="section-sub" data-aos="fade-up">Premium aluminium & uPVC solutions — robust, elegant, sustainable.</p>
+        <div class="services-grid">
+            <div class="service-card" data-aos="zoom-in">
+                <div class="service-icon"><i class="fas fa-door-open"></i></div>
+                <h3>Doors & Windows</h3>
+                <p>Sliding, casement, french doors — thermally broken profiles & smooth hardware.</p>
+            </div>
+            <div class="service-card" data-aos="zoom-in">
+                <div class="service-icon"><i class="fas fa-border-all"></i></div>
+                <h3>Office Partitions</h3>
+                <p>Glass & aluminium modular partitions for modern workspaces.</p>
+            </div>
+            <div class="service-card" data-aos="zoom-in">
+                <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Modular Kitchen</h3>
+                <p>High-gloss, powder-coated aluminium frames with soft-close drawers.</p>
+            </div>
+            <div class="service-card" data-aos="zoom-in">
+                <div class="service-icon"><i class="fas fa-chalkboard"></i></div>
+                <h3>Glazing & Tables</h3>
+                <p>Toughened glass partitions and custom aluminium tables.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="section gallery">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Signature Fabrications</h2>
+        <p class="section-sub" data-aos="fade-up">Real projects — blending modern design with industrial strength.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Aluminium windows">
+                </div>
+                <div class="gallery-info">
+                    <h4>Sliding Aluminium Windows</h4>
+                    <p>Premium powder coated finish with multi-chamber profiles.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="https://images.pexels.com/photos/5428900/pexels-photo-5428900.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glass partitions">
+                </div>
+                <div class="gallery-info">
+                    <h4>Office Glass Partitions</h4>
+                    <p>Frameless glazing for corporate elegance.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="https://images.pexels.com/photos/6457515/pexels-photo-6457515.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modular kitchen">
+                </div>
+                <div class="gallery-info">
+                    <h4>Modular Kitchen Setup</h4>
+                    <p>Aluminum modular kitchen with premium finish.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <div class="contact-section" data-aos="fade-up">
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3>Let's craft something remarkable together</h3>
+                    <p>Get durable, precision-engineered aluminium & uPVC solutions for your space.</p>
+                    <div class="contact-detail">
+                        <div><i class="fas fa-phone-alt"></i> <a href="tel:9864572124">9864572124</a></div>
+                        <div><i class="fas fa-envelope"></i> <a href="mailto:uttamthanait123@gmail.com">uttamthanait123@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h4 style="font-size: 1.7rem; margin-bottom: 18px;">Request a Quote</h4>
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="3" id="message" placeholder="Tell me about your project"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+                        <div id="formFeedback" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-content">
+        <p><strong>Uttam Thanait</strong> — Aluminium & uPVC Specialist</p>
+        <p><i class="fas fa-phone-alt"></i> 9864572124 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> uttamthanait123@gmail.com</p>
+        <p style="font-size: 0.85rem;">© 2025 — Precision fabrication for modern living</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    const quoteForm = document.getElementById('quoteForm');
+    const feedbackDiv = document.getElementById('formFeedback');
+    quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (!name || !phone || !email) {
+            feedbackDiv.innerHTML = '<span style="color:#c7362b;">Please fill all required fields.</span>';
+            return;
+        }
+        feedbackDiv.innerHTML = '<span style="color:#2c7a4b;">Thank you! Uttam will contact you within 24 hours.</span>';
+        quoteForm.reset();
+        setTimeout(() => { feedbackDiv.innerHTML = ''; }, 4000);
+    });
+</script>
 </body>
 </html>
